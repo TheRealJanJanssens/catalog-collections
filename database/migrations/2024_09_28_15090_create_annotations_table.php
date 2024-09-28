@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('annotations', function (Blueprint $table) {
-            $table->id();
+            $table->uuid();
             $table->text('content'); // Annotation text/content
             $table->timestamps();
         });

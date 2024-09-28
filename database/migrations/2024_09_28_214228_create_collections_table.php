@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('collections', function (Blueprint $table) {
             $table->uuid();
-            $table->foreignUuid('user_uuid')->nullable()->index();
-            $table->foreignUuid('collection_uuid')->nullable()->index();
             $table->string('name');
             $table->timestamps();
         });
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('collections');
     }
 };

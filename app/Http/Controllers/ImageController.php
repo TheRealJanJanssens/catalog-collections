@@ -33,7 +33,7 @@ class ImageController extends Controller
                 // Store the image details in the database
                 $imageModel = Image::create([
                     'path' => $path,
-                    'annotation_id' => $annotation ? $annotation->id : null,  // Link to annotation
+                    'annotation_uuid' => $annotation ? $annotation->id : null,  // Link to annotation
                     'rotation' => $request->input("rotations.$index"),
                     'crop' => $request->input("crops.$index"),
                     'order' => $request->input("orders.$index"),
@@ -98,12 +98,12 @@ class ImageController extends Controller
                         $image->annotation->update(['content' => $annotationContent]);
                     } else {
                         $annotation = Annotation::create(['content' => $annotationContent]);
-                        $image->annotation_id = $annotation->id;
+                        $image->annotation_uuid = $annotation->id;
                     }
                 } else {
                     // If annotation is not provided, clear the annotation relationship
                     $image->annotation()->delete();
-                    $image->annotation_id = null;
+                    $image->annotation_uuid = null;
                 }
 
                 // Update the rest of the image data

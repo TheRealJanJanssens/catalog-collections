@@ -15,18 +15,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->id();
+            $table->uuid();
             $table->string('path');
-            $table->unsignedBigInteger('annotation_id')->nullable();
+            $table->foreignUuid('annotation_uuid')->nullable();
             $table->integer('rotation')->default(0);
             $table->json('crop');
             $table->integer('order')->default(0);
             //$table->morphs('imageable');
-            $table->bigInteger('imageable_id')->unsigned();
+            $table->bigInteger('imageable_uuid')->unsigned();
             $table->enum('imageable_type', ImageableTypes::mySqlValues());
             $table->timestamps();
 
-            $table->foreign('annotation_id')->references('id')->on('annotations')->onDelete('set null');
+            //$table->foreign('annotation_uuid')->references('uuid')->on('annotations')->onDelete('set null');
         });
     }
 
