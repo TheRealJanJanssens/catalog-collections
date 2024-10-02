@@ -15,8 +15,7 @@ class Item extends Model
     protected $primaryKey = 'uuid';
 
     protected $fillable = [
-        'name',
-        'user_id'
+        'user_uuid'
     ];
 
     public function user(): BelongsTo
