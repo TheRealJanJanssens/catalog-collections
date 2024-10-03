@@ -1,4 +1,4 @@
-import PrimaryButton from '@/Components/Buttons/PrimaryButton';
+import Button from '@/Components/Button';
 import InputError from '@/Components/Inputs/InputError';
 import InputLabel from '@/Components/Inputs/InputLabel';
 import TextInput from '@/Components/Inputs/TextInput';
@@ -115,7 +115,7 @@ export default function UpdateProfileInformation({
                 )}
 
                 <div className="flex items-center gap-4">
-                    <PrimaryButton disabled={processing}>Save</PrimaryButton>
+                    <Button variant={'primary'} disabled={processing}>Save</Button>
 
                     <Transition
                         show={recentlySuccessful}
