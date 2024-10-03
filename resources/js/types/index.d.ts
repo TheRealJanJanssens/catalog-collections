@@ -8,6 +8,12 @@ export interface User {
     email_verified_at?: string;
 }
 
+interface Enums {
+    imageableTypes: {
+        item: string;
+    };
+}
+
 export type PageProps<
     T extends Record<string, unknown> = Record<string, unknown>,
 > = T & {
@@ -15,4 +21,5 @@ export type PageProps<
         user: User;
     };
     ziggy: Config & { location: string };
+    enums: Enums;
 };

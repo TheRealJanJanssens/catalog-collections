@@ -32,6 +32,7 @@ interface ImageInputProps {
     onImagesChanged?: (images: ImageItem[]) => void;
     imageable_type?: string;
     imageable_id?: number;
+    imageable_key?: string;
 }
 
 
@@ -52,6 +53,7 @@ export default forwardRef(function ImageInput(
         onImagesChanged,
         imageable_type,
         imageable_id,
+        imageable_key,
         ...props
     }: ImageInputProps,
     ref,
@@ -60,8 +62,8 @@ export default forwardRef(function ImageInput(
     const [editingImage, setEditingImage] = useState<ImageItem | null>(null);
     const [uploading, setUploading] = useState(false);
     const [uploadProgress, setUploadProgress] = useState(0);
-    const editorRef = useRef<AvatarEditor | null>(null);
-    const dropzoneRef = useRef<HTMLDivElement | null>(null);
+    const editorRef = useRef<typeof AvatarEditor | null>(null);
+    const dropzoneRef = useRef<HTMLInputElement | null>(null);
 
     useEffect(() => {
         if (onImagesChanged) {
@@ -112,6 +114,9 @@ export default forwardRef(function ImageInput(
         }
         if (imageable_id) {
             formData.append('imageable_id', imageable_id.toString());
+        }
+        if (imageable_key) {
+            formData.append('imageable_key', imageable_key.toString());
         }
 
         imagesToUpload.filter(image => !image.isExisting).forEach((image, index) => {
@@ -180,6 +185,9 @@ export default forwardRef(function ImageInput(
         }
         if (imageable_id) {
             formData.append('imageable_id', imageable_id.toString());
+        }
+        if (imageable_key) {
+            formData.append('imageable_key', imageable_key.toString());
         }
 
         imagesToUpdate.forEach((image, index) => {
