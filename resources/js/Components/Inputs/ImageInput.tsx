@@ -2,7 +2,7 @@ import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef,
 import AvatarEditor from 'react-avatar-editor';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios';
-import PrimaryButton from '../Buttons/PrimaryButton';
+import Button from '../Button';
 import Modal from '../Modal';
 import Draggable from 'react-draggable';
 import _ from 'lodash';
@@ -385,7 +385,7 @@ export default forwardRef(function ImageInput(
 
             {!autoUpload && images.length > 0 && (
                 <div className="mt-4 flex justify-between">
-                    <PrimaryButton
+                    <Button variant={'primary'}
                         onClick={() => handleUpload(images.filter(img => !img.isExisting))}
                         disabled={uploading || !images.some(img => !img.isExisting)}
                         className="w-1/2 mr-2"
@@ -393,8 +393,8 @@ export default forwardRef(function ImageInput(
                         {uploading && !images.some(img => img.isExisting)
                             ? `Uploading... ${uploadProgress}%`
                             : 'Upload New Images'}
-                    </PrimaryButton>
-                    <PrimaryButton
+                    </Button>
+                    <Button variant={'primary'}
                         onClick={() => handleUpdate(images.filter(img => img.isExisting))}
                         disabled={uploading || !images.some(img => img.isExisting)}
                         className="w-1/2 ml-2"
@@ -402,7 +402,7 @@ export default forwardRef(function ImageInput(
                         {uploading && images.some(img => img.isExisting)
                             ? `Updating... ${uploadProgress}%`
                             : 'Update Existing Images'}
-                    </PrimaryButton>
+                    </Button>
                 </div>
             )}
 
@@ -418,15 +418,15 @@ export default forwardRef(function ImageInput(
                             rotate={editingImage.rotation}
                         />
                         <div className="mt-4 flex justify-between">
-                            <PrimaryButton onClick={() => handleRotate('left')}>
+                            <Button variant={'primary'} onClick={() => handleRotate('left')}>
                                 Rotate Left
-                            </PrimaryButton>
-                            <PrimaryButton onClick={() => handleRotate('right')}>
+                            </Button>
+                            <Button variant={'primary'} onClick={() => handleRotate('right')}>
                                 Rotate Right
-                            </PrimaryButton>
-                            <PrimaryButton onClick={handleCrop}>
+                            </Button>
+                            <Button variant={'primary'} onClick={handleCrop}>
                                 Crop
-                            </PrimaryButton>
+                            </Button>
                         </div>
                         <textarea
                             className="mt-4 w-full rounded border p-2"
@@ -434,9 +434,9 @@ export default forwardRef(function ImageInput(
                             onChange={handleAnnotationChange}
                             placeholder="Add annotation (optional)..."
                         />
-                        <PrimaryButton onClick={saveChanges} className="mt-4 w-full">
+                        <Button variant={'primary'} onClick={saveChanges} className="mt-4 w-full">
                             Save Changes
-                        </PrimaryButton>
+                        </Button>
                     </div>
                 )}
             </Modal>

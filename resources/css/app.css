@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    /* h1 {
+        @apply text-10xl;
+    }
+    h2 {
+        @apply text-xl;
+    }
+    h3 {
+        @apply text-xl;
+    }
+    h4 {
+        @apply text-xl;
+    }
+    h5 {
+        @apply text-xl;
+    }
+    h6 {
+        @apply text-xl;
+    } */
+}
+
+@layer components {
+    .text-1 {
+        @apply text-limestone-700 dark:text-limestone-50;
+    }
+    .text-2 {
+        @apply text-limestone-600 dark:text-limestone-200;
+    }
+    .text-3 {
+        @apply text-limestone-500 dark:text-limestone-500;
+    }
+    .text-4 {
+        @apply text-limestone-300 dark:text-limestone-300;
+    }
+    .bg-1 {
+        @apply text-basalt-500 dark:text-basalt-500;
+    }
+    .bg-2 {
+        @apply text-basalt-600 dark:text-basalt-300;
+    }
+    .bg-3 {
+        @apply text-basalt-700 dark:text-basalt-200;
+    }
+    .bg-4 {
+        @apply text-basalt-800 dark:text-basalt-50;
+    }
+}

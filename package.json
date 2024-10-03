@@ -37,6 +37,7 @@
     },
     "dependencies": {
         "lodash": "^4.17.21",
+        "lucide-react": "^0.447.0",
         "react-avatar-editor": "^13.0.2",
         "react-draggable": "^4.4.6",
         "react-dropzone": "^14.2.3",
