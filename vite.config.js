@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
+import laravel from 'laravel-vite-plugin';
+import path from 'path';
+import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
@@ -14,10 +15,10 @@ export default defineConfig({
         viteStaticCopy({
             targets: [
                 {
-                    src: 'resources/images',
-                    dest: 'public/images'
+                    src: path.join(__dirname, '/resources/images'),
+                    dest: path.join(__dirname, '/public'),
                 },
-            ]
-        })
+            ],
+        }),
     ],
 });
