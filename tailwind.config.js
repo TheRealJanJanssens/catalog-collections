@@ -1,44 +1,42 @@
+// src/utils/tailwindConfig.js (or .ts)
 import forms from '@tailwindcss/forms';
 import colors from 'tailwindcss/colors';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 const extendedColors = {
     ...colors,
-    ...{
-        primary: colors.indigo,
-        secondary: colors.yellow,
-        //Extended Background colors
-        basalt: {
-            50: '#FFFFFF', //Light 4
-            200: '#FAFBFC', //Light 3
-            300: '#EBECF0', //Light 2
-            500: '#C1C7D0', //Light 1 / Dark 1
-            600: '#2F3746', //Dark 2
-            700: '#232A37', //Dark 3
-            800: '#161C27', //Dark 4
-        },
-        //Extended Text colors
-        limestone: {
-            50: '#FFFFFF', //Dark 1
-            200: '#EEF1F5', //Dark 2
-            300: '#B0B7C3', //Dark 4 / Light 4
-            500: '#8A94A6', //Dark 3 / Light 3
-            600: '#4E5D78', //Light 2
-            700: '#323B4B', //Light 1
-        },
+    primary: colors.indigo,
+    secondary: colors.yellow,
+    // Extended Background colors
+    basalt: {
+        50: '#FFFFFF', // Light 4
+        200: '#FAFBFC', // Light 3
+        300: '#EBECF0', // Light 2
+        500: '#C1C7D0', // Light 1 / Dark 1
+        600: '#2F3746', // Dark 2
+        700: '#232A37', // Dark 3
+        800: '#161C27', // Dark 4
+    },
+    // Extended Text colors
+    limestone: {
+        50: '#FFFFFF', // Dark 1
+        200: '#EEF1F5', // Dark 2
+        300: '#B0B7C3', // Dark 4 / Light 4
+        500: '#8A94A6', // Dark 3 / Light 3
+        600: '#4E5D78', // Light 2
+        700: '#323B4B', // Light 1
     },
 };
 
 /** @type {import('tailwindcss').Config} */
-export default {
-    darkMode: 'class',
+const tailwindConfig = {
+    darkMode: 'class', // or 'media' depending on your requirement
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.tsx',
     ],
-
     theme: {
         colors: extendedColors,
         fontSize: {
@@ -139,12 +137,12 @@ export default {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },
             borderRadius: {
-                md: '15px', //Check: make rem?
+                md: '15px', // Check: make rem?
             },
         },
     },
-
     plugins: [forms],
 };
 
-export { extendedColors };
+export default tailwindConfig; // Export the configuration as default
+export { extendedColors, tailwindConfig }; // Export extendedColors if needed elsewhere
