@@ -1,7 +1,9 @@
 import Button from '@/Components/Button';
 import Dropdown from '@/Components/Dropdown';
+import Icon from '@/Components/Icon';
 import ThemeSwitcher from '@/Components/ThemeSwitcher';
 import { PageProps } from '@/types';
+import { colors } from '@/utils/tailwindConfig';
 import { Head, Link } from '@inertiajs/react';
 
 export default function Welcome({
@@ -24,16 +26,16 @@ export default function Welcome({
         <>
             <Head title="Welcome" />
 
-            <nav className="border-gray-200 bg-white dark:bg-gray-900">
+            <nav className="bg-4 border-gray-200">
                 <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
                     <a
-                        href="https://flowbite.com/"
+                        href="/"
                         className="flex items-center space-x-3 rtl:space-x-reverse"
                     >
                         <img
                             src="/images/logo.svg"
                             className="h-8"
-                            alt="Flowbite Logo"
+                            alt="Logo"
                         />
                         {/* <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
                             LogoName
@@ -92,8 +94,12 @@ export default function Welcome({
                         </Dropdown>
 
                         {/* Login buttons */}
-                        <Button variant={'primary'} href={route('login')}>Login</Button>
-                        <Button variant={'secondary'} href={route('register')}>Register</Button>
+                        <Button variant={'primary'} href={route('login')}>
+                            Login
+                        </Button>
+                        <Button variant={'secondary'} href={route('register')}>
+                            Register
+                        </Button>
 
                         <ThemeSwitcher />
 
@@ -131,42 +137,10 @@ export default function Welcome({
                             <li>
                                 <a
                                     href="#"
-                                    className="block rounded bg-blue-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-blue-700 md:dark:text-blue-500"
+                                    className="text-4"
                                     aria-current="page"
                                 >
                                     Home
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
-                                >
-                                    About
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
-                                >
-                                    Services
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
-                                >
-                                    Pricing
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
-                                >
-                                    Contact
                                 </a>
                             </li>
                         </ul>
@@ -174,16 +148,25 @@ export default function Welcome({
                 </div>
             </nav>
 
-            <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+            <div className="bg-4">
+                <div className="mx-auto max-w-screen-xl px-4 py-20">
+                    <Icon
+                        category={'general'}
+                        name={'Smile'}
+                        color={colors.primary[500]}
+                    />
+
+                    <h1 className="text-6xl">Collect. Register. Share.</h1>
+                    <p>Catalogiseer je verzamel en deel met je vrienden.</p>
+                </div>
+            </div>
+
+            <div className="bg-2">
                 <div className="relative flex min-h-screen flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
                     <div className="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                        <header className="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
+                        <header className="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3"></header>
 
-                        </header>
-
-                        <main className="mt-6">
-
-                        </main>
+                        <main className="mt-6"></main>
 
                         <footer className="py-16 text-center text-sm text-black dark:text-white/70">
                             Laravel v{laravelVersion} (PHP v{phpVersion})

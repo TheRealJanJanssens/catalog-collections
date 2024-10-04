@@ -37,15 +37,15 @@
         @apply text-limestone-300 dark:text-limestone-300;
     }
     .bg-1 {
-        @apply text-basalt-500 dark:text-basalt-500;
+        @apply bg-basalt-500 dark:bg-basalt-500;
     }
     .bg-2 {
-        @apply text-basalt-600 dark:text-basalt-300;
+        @apply bg-basalt-300 dark:bg-basalt-600;
     }
     .bg-3 {
-        @apply text-basalt-700 dark:text-basalt-200;
+        @apply bg-basalt-200 dark:bg-basalt-700;
     }
     .bg-4 {
-        @apply text-basalt-800 dark:text-basalt-50;
+        @apply bg-basalt-50 dark:bg-basalt-800;
     }
 }

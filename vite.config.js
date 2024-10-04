@@ -18,6 +18,10 @@ export default defineConfig({
                     src: path.join(__dirname, '/resources/images'),
                     dest: path.join(__dirname, '/public'),
                 },
+                {
+                    src: path.join(__dirname, '/resources/icons'),
+                    dest: path.join(__dirname, '/public'),
+                },
             ],
         }),
     ],

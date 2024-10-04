@@ -45,7 +45,8 @@ class HandleInertiaRequests extends Middleware
             ],
             'enums' => [
                 'imageableTypes' => ImageableTypes::options()
-            ]
+            ],
+            'assetUrl' => asset(''),
         ];
     }
 }
