@@ -28,6 +28,13 @@ export default function Login({
         });
     };
 
+    /**
+     * Redirect directly to the correct link and not over href because of CORS problems
+     */
+    const handleGoogleLogin = () => {
+        window.location.href = route('auth.google');
+    };
+
     return (
         <GuestLayout>
             <Head title="Log in" />
@@ -99,6 +106,10 @@ export default function Login({
 
                     <Button variant={'primary'} className="ms-4" disabled={processing}>
                         Log in
+                    </Button>
+
+                    <Button variant={'secondary'} onClick={handleGoogleLogin}>
+                        Login with Google
                     </Button>
                 </div>
             </form>
