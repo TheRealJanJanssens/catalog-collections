@@ -1,8 +1,8 @@
+import Button from '@/Components/Button';
 import InputError from '@/Components/Inputs/InputError';
 import InputLabel from '@/Components/Inputs/InputLabel';
-import Button from '@/Components/Button';
 import TextInput from '@/Components/Inputs/TextInput';
-import GuestLayout from '@/Layouts/GuestLayout';
+import AuthLayout from '@/Layouts/AuthLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
 
@@ -24,7 +24,7 @@ export default function Register() {
     };
 
     return (
-        <GuestLayout>
+        <AuthLayout>
             <Head title="Register" />
 
             <form onSubmit={submit}>
@@ -129,11 +129,15 @@ export default function Register() {
                         Already registered?
                     </Link>
 
-                    <Button variant={'primary'} className="ms-4" disabled={processing}>
+                    <Button
+                        variant={'primary'}
+                        className="ms-4"
+                        disabled={processing}
+                    >
                         Register
                     </Button>
                 </div>
             </form>
-        </GuestLayout>
+        </AuthLayout>
     );
 }

@@ -5,7 +5,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 
 const extendedColors = {
     ...colors,
-    primary: colors.emerald,
+    primary: colors.teal,
     secondary: colors.yellow,
     // Extended Background colors
     basalt: {
@@ -144,6 +144,7 @@ const tailwindConfig = {
             8: '3.5rem',
             9: '4rem',
             10: '5rem',
+            11: '5.5rem',
             20: '10rem',
             100: '100%',
         },

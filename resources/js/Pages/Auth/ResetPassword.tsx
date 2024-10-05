@@ -1,8 +1,8 @@
+import Button from '@/Components/Button';
 import InputError from '@/Components/Inputs/InputError';
 import InputLabel from '@/Components/Inputs/InputLabel';
-import Button from '@/Components/Button';
 import TextInput from '@/Components/Inputs/TextInput';
-import GuestLayout from '@/Layouts/GuestLayout';
+import AuthLayout from '@/Layouts/AuthLayout';
 import { Head, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
 
@@ -29,7 +29,7 @@ export default function ResetPassword({
     };
 
     return (
-        <GuestLayout>
+        <AuthLayout>
             <Head title="Reset Password" />
 
             <form onSubmit={submit}>
@@ -90,11 +90,15 @@ export default function ResetPassword({
                 </div>
 
                 <div className="mt-4 flex items-center justify-end">
-                    <Button variant={'primary'} className="ms-4" disabled={processing}>
+                    <Button
+                        variant={'primary'}
+                        className="ms-4"
+                        disabled={processing}
+                    >
                         Reset Password
                     </Button>
                 </div>
             </form>
-        </GuestLayout>
+        </AuthLayout>
     );
 }

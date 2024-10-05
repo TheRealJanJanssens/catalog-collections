@@ -1,8 +1,8 @@
+import Button from '@/Components/Button';
 import InputError from '@/Components/Inputs/InputError';
 import InputLabel from '@/Components/Inputs/InputLabel';
-import Button from '@/Components/Button';
 import TextInput from '@/Components/Inputs/TextInput';
-import GuestLayout from '@/Layouts/GuestLayout';
+import AuthLayout from '@/Layouts/AuthLayout';
 import { Head, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
 
@@ -20,7 +20,7 @@ export default function ConfirmPassword() {
     };
 
     return (
-        <GuestLayout>
+        <AuthLayout>
             <Head title="Confirm Password" />
 
             <div className="mb-4 text-sm text-gray-600 dark:text-gray-400">
@@ -46,11 +46,15 @@ export default function ConfirmPassword() {
                 </div>
 
                 <div className="mt-4 flex items-center justify-end">
-                    <Button variant={'primary'} className="ms-4" disabled={processing}>
+                    <Button
+                        variant={'primary'}
+                        className="ms-4"
+                        disabled={processing}
+                    >
                         Confirm
                     </Button>
                 </div>
             </form>
-        </GuestLayout>
+        </AuthLayout>
     );
 }

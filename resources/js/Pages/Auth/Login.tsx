@@ -4,8 +4,9 @@ import Checkbox from '@/Components/Inputs/Checkbox';
 import InputError from '@/Components/Inputs/InputError';
 import InputLabel from '@/Components/Inputs/InputLabel';
 import TextInput from '@/Components/Inputs/TextInput';
-import GuestLayout from '@/Layouts/GuestLayout';
+import AuthLayout from '@/Layouts/AuthLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
+import { useLaravelReactI18n } from 'laravel-react-i18n';
 import { FormEventHandler } from 'react';
 
 export default function Login({
@@ -20,6 +21,8 @@ export default function Login({
         password: '',
         remember: false,
     });
+
+    const { t } = useLaravelReactI18n();
 
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
@@ -37,7 +40,7 @@ export default function Login({
     };
 
     return (
-        <GuestLayout>
+        <AuthLayout>
             <Head title="Log in" />
 
             {status && (
@@ -47,8 +50,8 @@ export default function Login({
             )}
 
             <div className="text-center">
-                <h3 className="text-1 mb-5 text-4xl">Sign in</h3>
-                <p className="text-3">Welcome back, you’ve been missed!</p>
+                <h3 className="text-1 mb-5 text-4xl">{t('auth.sign_in')}</h3>
+                <p className="text-3">{t('auth.sign_in_introduction')}</p>
             </div>
 
             <div className="mt-6">
@@ -58,21 +61,21 @@ export default function Login({
                     className="w-100"
                 >
                     <Icon category="socials" name="Google" className="me-1" />
-                    Sign in with Google
+                    {t('auth.sign_in_with_google')}
                 </Button>
             </div>
 
             <div className="relative flex items-center py-6">
                 <div className="border-basalt-200 dark:border-basalt-700 flex-grow border"></div>
                 <span className="text-4 mx-4 flex-shrink text-xl uppercase">
-                    Or
+                    {t('auth.or')}
                 </span>
                 <div className="border-basalt-200 dark:border-basalt-700 flex-grow border"></div>
             </div>
 
             <form onSubmit={submit}>
                 <div>
-                    <InputLabel htmlFor="email" value="Email" />
+                    <InputLabel htmlFor="email" value={t('auth.email')} />
 
                     <TextInput
                         id="email"
@@ -89,7 +92,7 @@ export default function Login({
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
+                    <InputLabel htmlFor="password" value={t('auth.password')} />
 
                     <TextInput
                         id="password"
@@ -115,7 +118,7 @@ export default function Login({
                                 }
                             />
                             <span className="ms-2 text-sm text-gray-600 dark:text-gray-400">
-                                Remember me
+                                {t('auth.remember_me')}
                             </span>
                         </label>
                     </div>
@@ -125,7 +128,7 @@ export default function Login({
                             href={route('password.request')}
                             className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
                         >
-                            Forgot your password?
+                            {t('auth.forgot_your_password')}
                         </Link>
                     )}
                 </div>
@@ -136,19 +139,19 @@ export default function Login({
                         className="w-100"
                         disabled={processing}
                     >
-                        Log in
+                        {t('auth.login')}
                     </Button>
 
                     <div className="w-100 mt-4 text-center text-sm">
                         <span className="text-4 me-1">
-                            Don't have an account yet?
+                            {t('auth.dont_have_account_yet')}
                         </span>
                         <Link href={route('register')} className="text-primary">
-                            Sign Up
+                            {t('auth.sign_up')}
                         </Link>
                     </div>
                 </div>
             </form>
-        </GuestLayout>
+        </AuthLayout>
     );
 }
