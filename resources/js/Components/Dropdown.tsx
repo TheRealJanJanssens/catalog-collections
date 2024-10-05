@@ -88,7 +88,7 @@ const Content = ({
                 leaveTo="opacity-0 scale-95"
             >
                 <div
-                    className={`absolute z-50 my-4 block list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow dark:divide-gray-600 dark:bg-gray-700 ${alignmentClasses} ${widthClasses}`}
+                    className={`absolute z-50 my-4 block list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow-md dark:divide-gray-600 dark:bg-gray-700 ${alignmentClasses} ${widthClasses}`}
                     onClick={() => setOpen(false)}
                 >
                     <div className={`rounded-md py-2 ` + contentClasses}>

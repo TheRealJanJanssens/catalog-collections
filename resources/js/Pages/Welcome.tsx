@@ -41,7 +41,7 @@ export default function Welcome({
                             <Dropdown.Trigger>
                                 <button
                                     type="button"
-                                    className="flex overflow-hidden rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-300 md:me-0 dark:focus:ring-gray-600"
+                                    className="flex overflow-hidden rounded-full bg-2 text-sm focus:ring-4 focus:ring-gray-300 md:me-0 dark:focus:ring-gray-600"
                                     id="user-menu-button"
                                     aria-expanded="false"
                                     data-dropdown-toggle="user-dropdown"
