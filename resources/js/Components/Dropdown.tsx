@@ -42,7 +42,7 @@ const Trigger = ({ children }: PropsWithChildren) => {
 
             {open && (
                 <div
-                    className="fixed inset-0 z-40"
+                    className="fixed inset-0 z-40 w-100 h-100 top-0 left-0"
                     onClick={() => setOpen(false)}
                 ></div>
             )}

@@ -1,9 +1,9 @@
+import ApplicationLogo from '@/Components/ApplicationLogo';
 import Button from '@/Components/Button';
 import Dropdown from '@/Components/Dropdown';
 import Icon from '@/Components/Icon';
 import ThemeSwitcher from '@/Components/ThemeSwitcher';
 import { PageProps } from '@/types';
-import { colors } from '@/utils/tailwindConfig';
 import { Head, Link } from '@inertiajs/react';
 
 export default function Welcome({
@@ -28,26 +28,19 @@ export default function Welcome({
 
             <nav className="bg-4 border-gray-200">
                 <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-                    <a
+                    <Link
                         href="/"
-                        className="flex items-center space-x-3 rtl:space-x-reverse"
+                        className="text-1 flex items-center space-x-3 rtl:space-x-reverse"
                     >
-                        <img
-                            src="/images/logo.svg"
-                            className="h-8"
-                            alt="Logo"
-                        />
-                        {/* <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                            LogoName
-                        </span> */}
-                    </a>
+                        <ApplicationLogo className="h-5" />
+                    </Link>
                     <div className="flex items-center space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
                         {/* Account Dropdown */}
                         <Dropdown>
                             <Dropdown.Trigger>
                                 <button
                                     type="button"
-                                    className="flex rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-300 md:me-0 dark:focus:ring-gray-600"
+                                    className="flex overflow-hidden rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-300 md:me-0 dark:focus:ring-gray-600"
                                     id="user-menu-button"
                                     aria-expanded="false"
                                     data-dropdown-toggle="user-dropdown"
@@ -56,10 +49,18 @@ export default function Welcome({
                                     <span className="sr-only">
                                         Open user menu
                                     </span>
-                                    <img
+
+                                    {/* TODO: When avatar is available */}
+                                    {/* <img
                                         className="h-8 w-8 rounded-full"
                                         src="/docs/images/people/profile-picture-3.jpg"
                                         alt="user photo"
+                                    /> */}
+
+                                    <Icon
+                                        category={'general'}
+                                        name={'User'}
+                                        size={28}
                                     />
                                 </button>
                             </Dropdown.Trigger>
@@ -133,15 +134,53 @@ export default function Welcome({
                         className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
                         id="navbar-user"
                     >
-                        <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:border-gray-700 dark:bg-gray-800 md:dark:bg-gray-900">
+                        <ul className="flex flex-col p-4 font-medium md:mt-0 md:flex-row md:space-x-2 md:p-0 rtl:space-x-reverse">
                             <li>
-                                <a
-                                    href="#"
-                                    className="text-4"
-                                    aria-current="page"
-                                >
+                                <Button href={'/'} variant={'transparant'}>
+                                    <Icon
+                                        category={'layout'}
+                                        name={'Layout-4-blocks'}
+                                        className={'me-1'}
+                                        size={21}
+                                    />
                                     Home
-                                </a>
+                                </Button>
+                            </li>
+
+                            <li>
+                                <Button href={'/'} variant={'transparant'}>
+                                    <Icon
+                                        category={'object'}
+                                        name={'Commode-1'}
+                                        className={'me-1'}
+                                        size={21}
+                                    />
+                                    Collections
+                                </Button>
+                            </li>
+
+                            <li>
+                                <Button href={'/'} variant={'transparant'}>
+                                    <Icon
+                                        category={'object'}
+                                        name={'Library'}
+                                        className={'me-1'}
+                                        size={21}
+                                    />
+                                    Knowledge Base
+                                </Button>
+                            </li>
+
+                            <li>
+                                <Button href={'/'} variant={'transparant'}>
+                                    <Icon
+                                        category={'shopping'}
+                                        name={'Cart-2'}
+                                        className={'me-1'}
+                                        size={21}
+                                    />
+                                    Marketplace
+                                </Button>
                             </li>
                         </ul>
                     </div>
@@ -149,13 +188,7 @@ export default function Welcome({
             </nav>
 
             <div className="bg-4">
-                <div className="mx-auto max-w-screen-xl px-4 py-20">
-                    <Icon
-                        category={'general'}
-                        name={'Smile'}
-                        color={colors.primary[500]}
-                    />
-
+                <div className="mx-auto max-w-screen-xl px-4 py-10">
                     <h1 className="text-6xl">Collect. Register. Share.</h1>
                     <p>Catalogiseer je verzamel en deel met je vrienden.</p>
                 </div>

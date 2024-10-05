@@ -26,16 +26,29 @@
 @layer components {
     .text-1 {
         @apply text-limestone-700 dark:text-limestone-50;
+        svg{
+            @apply fill-limestone-700 dark:fill-limestone-50
+        }
     }
     .text-2 {
         @apply text-limestone-600 dark:text-limestone-200;
+        svg{
+            @apply text-limestone-600 dark:text-limestone-200
+        }
     }
     .text-3 {
         @apply text-limestone-500 dark:text-limestone-500;
+        svg{
+            @apply text-limestone-500 dark:text-limestone-500
+        }
     }
     .text-4 {
         @apply text-limestone-300 dark:text-limestone-300;
+        svg{
+            @apply text-limestone-300 dark:text-limestone-300
+        }
     }
+
     .bg-1 {
         @apply bg-basalt-500 dark:bg-basalt-500;
     }

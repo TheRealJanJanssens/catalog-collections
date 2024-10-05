@@ -1,7 +1,8 @@
+import Button from '@/Components/Button';
+import Icon from '@/Components/Icon';
 import Checkbox from '@/Components/Inputs/Checkbox';
 import InputError from '@/Components/Inputs/InputError';
 import InputLabel from '@/Components/Inputs/InputLabel';
-import Button from '@/Components/Button';
 import TextInput from '@/Components/Inputs/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
@@ -45,6 +46,30 @@ export default function Login({
                 </div>
             )}
 
+            <div className="text-center">
+                <h3 className="text-1 mb-5 text-4xl">Sign in</h3>
+                <p className="text-3">Welcome back, you’ve been missed!</p>
+            </div>
+
+            <div className="mt-6">
+                <Button
+                    variant={'light'}
+                    onClick={handleGoogleLogin}
+                    className="w-100"
+                >
+                    <Icon category="socials" name="Google" className="me-1" />
+                    Sign in with Google
+                </Button>
+            </div>
+
+            <div className="relative flex items-center py-6">
+                <div className="border-basalt-200 dark:border-basalt-700 flex-grow border"></div>
+                <span className="text-4 mx-4 flex-shrink text-xl uppercase">
+                    Or
+                </span>
+                <div className="border-basalt-200 dark:border-basalt-700 flex-grow border"></div>
+            </div>
+
             <form onSubmit={submit}>
                 <div>
                     <InputLabel htmlFor="email" value="Email" />
@@ -79,22 +104,22 @@ export default function Login({
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
-                <div className="mt-4 block">
-                    <label className="flex items-center">
-                        <Checkbox
-                            name="remember"
-                            checked={data.remember}
-                            onChange={(e) =>
-                                setData('remember', e.target.checked)
-                            }
-                        />
-                        <span className="ms-2 text-sm text-gray-600 dark:text-gray-400">
-                            Remember me
-                        </span>
-                    </label>
-                </div>
+                <div className="mt-4 flex items-center justify-between">
+                    <div className="block">
+                        <label className="flex items-center">
+                            <Checkbox
+                                name="remember"
+                                checked={data.remember}
+                                onChange={(e) =>
+                                    setData('remember', e.target.checked)
+                                }
+                            />
+                            <span className="ms-2 text-sm text-gray-600 dark:text-gray-400">
+                                Remember me
+                            </span>
+                        </label>
+                    </div>
 
-                <div className="mt-4 flex items-center justify-end">
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
@@ -103,14 +128,25 @@ export default function Login({
                             Forgot your password?
                         </Link>
                     )}
+                </div>
 
-                    <Button variant={'primary'} className="ms-4" disabled={processing}>
+                <div className="mt-4">
+                    <Button
+                        variant={'primary'}
+                        className="w-100"
+                        disabled={processing}
+                    >
                         Log in
                     </Button>
 
-                    <Button variant={'secondary'} onClick={handleGoogleLogin}>
-                        Login with Google
-                    </Button>
+                    <div className="w-100 mt-4 text-center text-sm">
+                        <span className="text-4">
+                            Don't have an account yet?
+                        </span>
+                        <Link href={route('register')} className="text-primary">
+                            Sign Up
+                        </Link>
+                    </div>
                 </div>
             </form>
         </GuestLayout>

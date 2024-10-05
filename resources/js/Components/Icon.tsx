@@ -7,6 +7,7 @@ type IconProps = {
     color?: string;
     size?: number;
     style?: React.CSSProperties;
+    className?: string;
 };
 
 export default function Icon({
@@ -15,6 +16,7 @@ export default function Icon({
     color = 'currentColor',
     size = 24,
     style = {},
+    className = '',
     ...props
 }: IconProps): React.ReactElement {
     const { assetUrl } = usePage().props;
@@ -27,10 +29,21 @@ export default function Icon({
             .then((response) => response.text())
             .then((data) => {
                 // Replace any fill attribute inside the SVG with the dynamic color
-                const modifiedSvg = data.replace(
-                    /fill="[^"]*"/g,
-                    `fill="${color}"`,
-                );
+                let modifiedSvg = data
+                    .replace(/width="24"/g, `width="${size}"`)
+                    .replace(/height="24"/g, `height="${size}"`)
+                    .replace(
+                        /sizeBox="[^"]*"/g,
+                        `sizeBox="0 0 ${size} ${size}"`,
+                    );
+
+                if (color !== 'currentColor') {
+                    modifiedSvg = data.replace(
+                        /fill="[^"]*"/g,
+                        `fill="${color}"`,
+                    );
+                }
+
                 setSvgContent(modifiedSvg);
             })
             .catch((err) => console.error(`Failed to load icon: ${name}`, err));
@@ -42,6 +55,7 @@ export default function Icon({
 
     return (
         <span
+            className={className}
             dangerouslySetInnerHTML={{ __html: svgContent }}
             style={{ ...style, width: size, height: size }}
             {...props}
