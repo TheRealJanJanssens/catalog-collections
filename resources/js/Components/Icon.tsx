@@ -38,7 +38,7 @@ export default function Icon({
                     );
 
                 if (color !== 'currentColor') {
-                    modifiedSvg = data.replace(
+                    modifiedSvg = modifiedSvg.replace(
                         /fill="[^"]*"/g,
                         `fill="${color}"`,
                     );

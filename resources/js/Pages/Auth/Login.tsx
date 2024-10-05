@@ -140,7 +140,7 @@ export default function Login({
                     </Button>
 
                     <div className="w-100 mt-4 text-center text-sm">
-                        <span className="text-4">
+                        <span className="text-4 me-1">
                             Don't have an account yet?
                         </span>
                         <Link href={route('register')} className="text-primary">

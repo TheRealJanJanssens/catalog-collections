@@ -26,11 +26,11 @@ export default function Button({
     ...props
 }: ButtonProps) {
     const baseClassName =
-        'inline-flex items-center justify-center rounded-md border px-4 py-2 font-semibold transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2';
+        'inline-flex items-center justify-center rounded-md border px-4 py-2 font-semibold transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer';
 
     const styleClasses = {
         primary:
-            'border-transparent bg-gray-800 text-white hover:bg-gray-700 focus:bg-gray-700 focus:ring-indigo-500 active:bg-gray-900 dark:bg-gray-200 dark:text-gray-800 dark:hover:bg-white dark:focus:bg-white dark:active:bg-gray-300',
+            'border-transparent bg-primary-500 text-white hover:bg-primary-400 focus:bg-gray-700 focus:ring-indigo-500 active:bg-gray-900 dark:focus:bg-white dark:active:bg-gray-300',
         secondary:
             'border-transparent border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-indigo-500 disabled:opacity-25 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-offset-gray-800',
         danger: 'border-transparent bg-red-600 text-white hover:bg-red-500 focus:ring-red-500 active:bg-red-700 dark:focus:ring-offset-gray-800',

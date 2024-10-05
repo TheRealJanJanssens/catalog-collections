@@ -4,6 +4,7 @@ import Dropdown from '@/Components/Dropdown';
 import Icon from '@/Components/Icon';
 import ThemeSwitcher from '@/Components/ThemeSwitcher';
 import { PageProps } from '@/types';
+import { colors } from '@/utils/tailwindConfig';
 import { Head, Link } from '@inertiajs/react';
 
 export default function Welcome({
@@ -61,6 +62,7 @@ export default function Welcome({
                                         category={'general'}
                                         name={'User'}
                                         size={28}
+                                        color={colors.primary[500]}
                                     />
                                 </button>
                             </Dropdown.Trigger>
@@ -142,6 +144,7 @@ export default function Welcome({
                                         name={'Layout-4-blocks'}
                                         className={'me-1'}
                                         size={21}
+                                        color={colors.primary[500]}
                                     />
                                     Home
                                 </Button>
@@ -154,6 +157,7 @@ export default function Welcome({
                                         name={'Commode-1'}
                                         className={'me-1'}
                                         size={21}
+                                        color={colors.primary[500]}
                                     />
                                     Collections
                                 </Button>
@@ -166,6 +170,7 @@ export default function Welcome({
                                         name={'Library'}
                                         className={'me-1'}
                                         size={21}
+                                        color={colors.primary[500]}
                                     />
                                     Knowledge Base
                                 </Button>
@@ -178,6 +183,7 @@ export default function Welcome({
                                         name={'Cart-2'}
                                         className={'me-1'}
                                         size={21}
+                                        color={colors.primary[500]}
                                     />
                                     Marketplace
                                 </Button>
