@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Collection extends Model
+class AttributeInput extends Model
 {
-    use HasFactory, HasUuids, CreateUuid;
+    use HasUuids, CreateUuid;
 
     protected $primaryKey = 'uuid';
 
     protected $fillable = [
-        'name'
+        'label',
+        'type'
     ];
 }

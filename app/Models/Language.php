@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Collection extends Model
+class Language extends Model
 {
-    use HasFactory, HasUuids, CreateUuid;
-
-    protected $primaryKey = 'uuid';
+    use HasUuids, CreateUuid;
 
     protected $fillable = [
+        'code',
         'name'
     ];
 }

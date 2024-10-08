@@ -6,14 +6,21 @@ use App\Concerns\Models\CreateUuid;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Collection extends Model
+class Attribute extends Model
 {
-    use HasFactory, HasUuids, CreateUuid;
+    use HasUuids, CreateUuid;
 
     protected $primaryKey = 'uuid';
 
     protected $fillable = [
-        'name'
+        'value',
+        'input_uuid'
     ];
+
+    public function input(): BelongsTo
+    {
+        return $this->belongsTo(AttributeInput::class, ownerKey: 'input_uuid');
+    }
 }
