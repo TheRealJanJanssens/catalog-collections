@@ -31,6 +31,10 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/item/create', function () {
         return Inertia::render('Item/Create');
     })->name('items.create');
+
+    Route::get('/collection', function () {
+        return Inertia::render('Collection/Index');
+    })->name('collections.index');
 });
 
 /**

@@ -139,7 +139,11 @@ export default function MainNavigation({
                 >
                     <ul className="flex flex-col p-4 font-medium md:mt-0 md:flex-row md:space-x-2 md:p-0 rtl:space-x-reverse">
                         <li>
-                            <Button href={'/'} variant={'transparant'}>
+                            <Button
+                                href={'/'}
+                                variant={'transparant'}
+                                className="justify-center"
+                            >
                                 <Icon
                                     category={'layout'}
                                     name={'Layout-4-blocks'}
@@ -156,6 +160,7 @@ export default function MainNavigation({
                                 <Button
                                     href={route('items.index')}
                                     variant={'transparant'}
+                                    className="justify-center"
                                 >
                                     <Icon
                                         category={'object'}
@@ -170,7 +175,11 @@ export default function MainNavigation({
                         )}
 
                         <li>
-                            <Button href={'/'} variant={'transparant'}>
+                            <Button
+                                href={'/'}
+                                variant={'transparant'}
+                                className="justify-center"
+                            >
                                 <Icon
                                     category={'object'}
                                     name={'Library'}
@@ -183,7 +192,11 @@ export default function MainNavigation({
                         </li>
 
                         <li>
-                            <Button href={'/'} variant={'transparant'}>
+                            <Button
+                                href={'/'}
+                                variant={'transparant'}
+                                className="justify-center"
+                            >
                                 <Icon
                                     category={'shopping'}
                                     name={'Cart-2'}
